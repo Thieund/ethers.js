@@ -71,9 +71,10 @@ class PollingBlockSubscriber {
             }
         }
         catch (error) {
-            // @TODO: Minor bump, add an "error" event to let subscribers
-            //        know things went awry.
-            //console.log(error);
+            this.#provider.emit("error", index_js_1.makeError("Unknown error while listening to filtered events", "UNKNOWN_ERROR", {
++                reasonCode: "UNKNOWN_ID",
++                error
++              }));
         }
         // We have been stopped
         if (this.#poller == null) {
