@@ -56,7 +56,6 @@ class FilterIdSubscriber {
     }
     async #poll(blockNumber) {
         try {
-            throw new Error();
             // Subscribe if necessary
             if (this.#filterIdPromise == null) {
                 this.#filterIdPromise = this._subscribe(this.#provider);
