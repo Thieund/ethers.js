@@ -91,7 +91,10 @@ class FilterIdSubscriber {
             await this._emitResults(this.#provider, result);
         }
         catch (error) {
-            console.log("@TODO", error);
+            this.#provider.emit("error", index_js_1.makeError("Unknown error while listening to filtered events", "UNKNOWN_ERROR", {
++                reasonCode: "UNKNOWN_ID",
++                error
++              }));
         }
         this.#provider.once("block", this.#poller);
     }
