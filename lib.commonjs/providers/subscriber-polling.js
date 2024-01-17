@@ -72,9 +72,9 @@ class PollingBlockSubscriber {
         }
         catch (error) {
             this.#provider.emit("error", index_js_1.makeError("Unknown error while listening to filtered events", "UNKNOWN_ERROR", {
-+                reasonCode: "UNKNOWN_ID",
-+                error
-+              }));
+                reasonCode: "UNKNOWN_ID",
+                error
+              }));
         }
         // We have been stopped
         if (this.#poller == null) {
